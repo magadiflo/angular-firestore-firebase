@@ -1,0 +1,9 @@
+.chart-container {
+    display: -ms-grid;
+    display: grid;
+    height: 300px;    
+}
+
+ngx-charts-bar-horizontal {
+    fill: gray;
+}
