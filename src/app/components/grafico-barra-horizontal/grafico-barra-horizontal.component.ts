@@ -38,24 +38,24 @@ export class GraficoBarraHorizontalComponent implements OnDestroy{
 
   colorScheme = 'nightLights';
 
-  intervalo: any;
+  //intervalo: any;
 
   constructor() {
     
     //Según la documentación de la librería debemos reemplazar toda la propiedad
-    this.intervalo = setInterval(() => {
-      console.log('tick');  
-      const newResults = [...this.results];
-      for(let i in newResults) {
-        newResults[i].value = Math.round(Math.random() * 500);
-      }
-      this.results = [...newResults];
-    }, 1500);
+    // this.intervalo = setInterval(() => {
+    //   console.log('tick');  
+    //   const newResults = [...this.results];
+    //   for(let i in newResults) {
+    //     newResults[i].value = Math.round(Math.random() * 500);
+    //   }
+    //   this.results = [...newResults];
+    // }, 1500);
   }
 
   ngOnDestroy(): void {
-    console.log('Finalizando componente grafico-barra-horizontal y destruyendo el intervalo...');   
-    clearInterval(this.intervalo);
+   //console.log('Finalizando componente grafico-barra-horizontal y destruyendo el intervalo...');   
+    // clearInterval(this.intervalo);
   }
 
   onSelect(event: any) {
