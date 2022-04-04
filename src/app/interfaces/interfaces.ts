@@ -4,3 +4,8 @@ export interface Game {
     url: string,
     votos: number,
 }
+
+export interface RespuestaApi {
+    ok: boolean, 
+    mensaje: string,
+  }

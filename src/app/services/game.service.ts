@@ -5,7 +5,7 @@ import { Observable, of, tap } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 
-import { Game } from '../interfaces/interfaces';
+import { Game, RespuestaApi } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +18,19 @@ export class GameService {
 
   getNominados(): Observable<Game[]> {
     if (this.juegos.length > 0) {
-      console.log('Desde caché');  
+      console.log('Desde caché');
       return of(this.juegos);
     } else {
-      console.log('Desde internet');  
+      console.log('Desde internet');
       return this.http.get<Game[]>(`${environment.url}/api/goty`)
         .pipe(
           tap(resp => this.juegos = resp)
         );
     }
+  }
+
+  votarJuego(id: string): Observable<RespuestaApi> {
+    return this.http.post<RespuestaApi>(`${environment.url}/api/goty/${id}`, {});
   }
 
 }
