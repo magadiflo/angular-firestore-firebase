@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url: 'http://localhost:5000/firestore-grafica-5d812/us-central1',
 };
