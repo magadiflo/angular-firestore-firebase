@@ -8,3 +8,8 @@ Agregar en el archivo .browserslistrc el siguiente código
 not ios_saf 15.2-15.3
 not safari 15.2-15.3
 ```
+
+## Publicación del proyecto angular en firebase
+```
+https://firestore-grafica-5d812.web.app/inicio
+```
