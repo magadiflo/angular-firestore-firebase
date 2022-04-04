@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, of, tap } from 'rxjs';
+import { Observable, of, tap, catchError } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 
@@ -30,7 +30,10 @@ export class GameService {
   }
 
   votarJuego(id: string): Observable<RespuestaApi> {
-    return this.http.post<RespuestaApi>(`${environment.url}/api/goty/${id}`, {});
+    return this.http.post<RespuestaApi>(`${environment.url}/api/goty/${id}`, {})
+      .pipe(
+        catchError(resp => of(resp.error))
+      );
   }
 
 }
